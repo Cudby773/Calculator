@@ -10,23 +10,18 @@ console.log('Please enter some input:');
 const SecondArg = readline.prompt();
 const num2 = +SecondArg;
 
-switch (operator) {
-    case '+':
-        sum = num1 + num2;
-        console.log('The answer is ' + sum);
-        break;
-    case '-':
-        diff = num1 - num2;
-        console.log('The answer is ' + diff);
-        break;
-    case '*':
-        mult = num1 * num2;
-        console.log('The answer is ' + mult);
-        break;
-    case '/':
-        ratio = num1 / num2;
-        console.log('The answer is ' + ratio);
-        break;
-    default:
-        console.log('This operator is not supported')
+if (operator == '+') {
+    sum = num1 + num2;
+    console.log('The answer is ' + sum);
+} else if (operator == '-') {
+    diff = num1 - num2;
+    console.log('The answer is ' + diff);
+} else if (operator == '*') {
+    mult = num1 * num2;
+    console.log('The answer is ' + mult);
+} else if (operator == '/') {
+    ratio = num1 / num2;
+    console.log('The answer is ' + ratio);
+} else {
+    console.log('This operator is not supported')
 }
