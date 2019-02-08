@@ -3,25 +3,26 @@ console.log('Welcome to the calculator!');
 console.log('--------------------------')
 console.log('Please enter an operator:');
 const operator = readline.prompt();
-console.log('Please enter some input:');
-const FirstArg = readline.prompt();
-const num1 = +FirstArg;
-console.log('Please enter some input:');
-const SecondArg = readline.prompt();
-const num2 = +SecondArg;
-
+console.log('Please enter the number of operands:');
+const operands = readline.prompt();
+var arr = Array(operands);
+for (var i = 0; i < operands; i++) {
+    console.log('Please enter some input:');
+    var arg = readline.prompt();
+    arr[i] = +arg;
+}
 if (operator == '+') {
-    sum = num1 + num2;
-    console.log('The answer is ' + sum);
+    var total = arr.reduce(function(accumulator, currentValue) { return accumulator + currentValue; });
+    console.log('The answer is ' + total);
 } else if (operator == '-') {
-    diff = num1 - num2;
-    console.log('The answer is ' + diff);
+    var total = arr.reduce(function(accumulator, currentValue) { return accumulator - currentValue; });
+    console.log('The answer is ' + total);
 } else if (operator == '*') {
-    mult = num1 * num2;
-    console.log('The answer is ' + mult);
+    var total = arr.reduce(function(accumulator, currentValue) { return accumulator * currentValue; });
+    console.log('The answer is ' + total);
 } else if (operator == '/') {
-    ratio = num1 / num2;
-    console.log('The answer is ' + ratio);
+    var total = arr.reduce(function(accumulator, currentValue) { return accumulator / currentValue; });
+    console.log('The answer is ' + total);
 } else {
     console.log('This operator is not supported')
 }
