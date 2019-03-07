@@ -20,10 +20,11 @@ exports.performOneArithmeticCalculation = function() {
         var total = arr.reduce(function(accumulator, currentValue) { return accumulator * currentValue; });
         console.log(`The answer is ${total}`);
     } else if (operator == '/') {
+        arr = arr.filter(function(number) {return number != 0})
         var total = arr.reduce(function(accumulator, currentValue) { return accumulator / currentValue; });
         console.log(`The answer is ${total}`);
     } else {
-        console.log('This operator is not supported')
+        throw 'The operator entered was not valid'
     }
     return 1
 }

@@ -18,7 +18,6 @@ var welcome_message = function() {
     console.log('--------------------------')
 }
 
-
 var x = 1;
 welcome_message();
 while (x === 1) {
@@ -31,7 +30,11 @@ while (x === 1) {
     }
     const calculationMode = getCalculationMode();
     if (calculationMode === ARITHMETIC_MODE) {
-      var x = Arithmetic.performOneArithmeticCalculation();
+      try {
+        var x = Arithmetic.performOneArithmeticCalculation();
+      } catch(e) {
+          console.log(e)
+      }
     } else if (calculationMode === VOWEL_COUNTING_MODE) {
       var x = VowelCount.performOneVowelCountingCalculation();
     }
