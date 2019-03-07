@@ -10,6 +10,9 @@ var getCalculationMode = function() {
     var mode = UserInput.get_str_input_with_prompt(`Which calculator mode do you want?
     1) Arithmetic
     2) Vowel Counting`);
+    while (mode != 1 && mode != 2) {
+        mode = UserInput.get_str_input_with_prompt(`Please pick either 1 for arithmetic or 2 for vowel counting`)
+    }
     return mode
 }
 
@@ -30,11 +33,7 @@ while (x === 1) {
     }
     const calculationMode = getCalculationMode();
     if (calculationMode === ARITHMETIC_MODE) {
-      try {
         var x = Arithmetic.performOneArithmeticCalculation();
-      } catch(e) {
-          console.log(e)
-      }
     } else if (calculationMode === VOWEL_COUNTING_MODE) {
       var x = VowelCount.performOneVowelCountingCalculation();
     }

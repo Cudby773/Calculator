@@ -1,7 +1,14 @@
 const UserInput = require('./UserInput')
 exports.performOneArithmeticCalculation = function() {
-    const operator = UserInput.get_str_input_with_prompt('Please enter an operator:');
-    const operands = UserInput.get_num_input_with_prompt('Please enter the number of operands:');
+    var operator = UserInput.get_str_input_with_prompt('Please enter an operator:');
+    const operator_arr = ['+', '-', '*', '/'];
+    while (!operator_arr.includes(operator)) {
+        operator = UserInput.get_str_input_with_prompt('Please enter one of +,-,*,/:');
+    }
+    var operands = UserInput.get_num_input_with_prompt('Please enter the number of operands:');
+    while (isNaN(operands)){
+        operands = UserInput.get_num_input_with_prompt('Please only enter numbers:');
+    }
     var arr = Array(operands);
     for (var i = 0; i < operands; i++) {
         var arg = UserInput.get_num_input_with_prompt(`Please enter number ${i + 1}:`);
